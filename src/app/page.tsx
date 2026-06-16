@@ -136,7 +136,7 @@ export default function Home() {
 
             <div>
               <h3 className="text-4xl font-bold text-red-700">
-                2/06/1884
+                2/06
               </h3>
 
               <p className="text-gray-700">
