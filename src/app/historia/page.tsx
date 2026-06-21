@@ -6,22 +6,23 @@ export default function HistoriaPage() {
       <h1 className="text-4xl font-bold text-red-700 mb-8">
         📖 Historia del Cuartel
       </h1>
-<div className="overflow-hidden rounded-xl shadow-lg mb-8 max-w-3xl mx-auto">
-  <Image
-    src="/imagenes/historia-bomberos.png"
-    alt="Historia de los Bomberos Voluntarios"
-    width={200}
-    height={70}
-    className= "max-w-3xl mx-auto"
-  />
-</div>
-      <div className="bg-white rounded-xl shadow p-8 text-black">
+      <div className="overflow-hidden rounded-xl shadow-lg mb-8 max-w-3xl mx-auto">
+        <Image
+          src="/imagenes/historia-bomberos.png"
+          alt="Historia de los Bomberos Voluntarios"
+          width={200}
+          height={70}
+          className="max-w-3xl mx-auto"
+        />
+      </div>
 
-        <h2 className="text-2xl font-semibold mb-4">
-          Historia de los Bomberos Voluntarios en Argentina
-        </h2>
 
-        <div className="space-y-6 leading-8 text-justify">
+      <details className="bg-white rounded-xl shadow-md p-6">
+        <summary className="text-2xl font-bold text-red-700 cursor-pointer">
+          📖 Historia de los bomberos voluntarios de Argentina
+        </summary>
+
+        <div className="space-y-6 leading-8 text-black mt-6">
 
           <p>
             La historia de los Bomberos Voluntarios en Argentina se remonta a fines del siglo XIX, durante un período de gran crecimiento poblacional impulsado por la inmigración europea. Muchas familias se establecieron en barrios de la Ciudad de Buenos Aires, donde las viviendas construidas principalmente en madera y chapa se encontraban expuestas a constantes riesgos de incendio.
@@ -52,15 +53,22 @@ export default function HistoriaPage() {
           </p>
 
         </div>
+      </details>
+
+
+
+
+
+      <div className="bg-white rounded-xl shadow p-8 text-black">
 
         <hr className="my-8" />
-        
+
         <p className="mb-8">
           En la provincia de Entre Ríos, el primer cuartel se creo el 15 de noviembre
-          de 1996, en Gualeguaychu. El 16 de noviembre se creo la Federacion 
+          de 1996, en Gualeguaychu. El 16 de noviembre se creo la Federacion
           Entrerriana de Bomberos Voluntarios, con el objetivo de coordinar y fortalecer
           a las distintas asociaciones de bomberos voluntarios en la provincia.
-          
+
         </p>
 
         <p className="mb-8">
@@ -97,7 +105,7 @@ export default function HistoriaPage() {
             <h3 className="font-bold">1988</h3>
             <p>Creación del Consejo de Federaciones de Bomberos Voluntarios de la República Argentina.</p>
           </div>
-          
+
           <div className="border-l-4 border-red-600 pl-4">
             <h3 className="font-bold">Actualidad</h3>
             <p>Miles de bomberos voluntarios prestan servicio en todo el país.</p>

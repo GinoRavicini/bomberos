@@ -26,6 +26,11 @@ export default function ContactoPage() {
                 <p className="text-5xl font-bold mt-4">
                     100
                 </p>
+
+                <p className="text-xl">
+                    O SALGA CORRIENDO
+                </p>
+
             </section>
 
             {/* Información */}
