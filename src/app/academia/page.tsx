@@ -22,7 +22,7 @@ export default function AcademiaPage() {
                 <div className="flex flex-col md:flex-row items-center gap-6 flex-1">
 
                     <Image
-                        src="/imagenes/estudien.jpeg"
+                        src="/imagenes/poner imagendeinstructor.jpg"
                         alt="Instructor Academia"
                         width={140}
                         height={140}
@@ -35,11 +35,11 @@ export default function AcademiaPage() {
                         </h2>
 
                         <p className="text-red-700 font-medium mt-1">
-                            El minium
+                            Fulano
                         </p>
 
                         <p className="text-gray-600 mt-2">
-                            Su villana favorita es la bombero estrella.
+                            mengano
                         </p>
                     </div>
 
