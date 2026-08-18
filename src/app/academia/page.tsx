@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { rolesDotacion } from "@/data/rolesDotacion";
 export default function AcademiaPage() {
     return (
         <main className="max-w-6xl mx-auto p-8">
@@ -21,25 +21,31 @@ export default function AcademiaPage() {
                 {/* Instructor */}
                 <div className="flex flex-col md:flex-row items-center gap-6 flex-1">
 
-                    <Image
-                        src="/imagenes/poner imagendeinstructor.jpg"
-                        alt="Instructor Academia"
-                        width={140}
-                        height={140}
-                        className="rounded-full object-cover border-4 border-red-700"
-                    />
+<div className="relative">
+    <div className="absolute inset-0 rounded-full bg-red-700 blur-md opacity-30"></div>
+
+    <div className="relative rounded-full p-1 bg-white shadow-xl">
+        <Image
+            src="/imagenes/ginooo.jpeg"
+            alt="Instructor Academia"
+            width={160}
+            height={160}
+            className="rounded-full object-cover aspect-square"
+        />
+    </div>
+</div>
 
                     <div>
                         <h2 className="text-2xl font-bold text-gray-800">
-                            Instructor a cargo
+                            LAS
                         </h2>
 
                         <p className="text-red-700 font-medium mt-1">
-                            Fulano
+                            QUIERO ❤️
                         </p>
 
                         <p className="text-gray-600 mt-2">
-                            mengano
+                            Onfibias
                         </p>
                     </div>
 
@@ -71,6 +77,251 @@ export default function AcademiaPage() {
                 </h2>
 
                 <div className="grid gap-6">
+
+                    {/* Roles de Dotación */}
+                    <details className="bg-white rounded-xl shadow-md p-6 mb-6">
+                        <summary className="text-2xl font-bold text-red-700 cursor-pointer">
+                            👨‍🚒 Roles de Dotación
+                        </summary>
+
+                        <div className="mt-6 space-y-6">
+
+                            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                                <p className="text-gray-700">
+                                    Los roles de dotación son acciones específicas que debe
+                                    cumplir cada bombero para lograr una mejor organización
+                                    del trabajo durante una emergencia.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6">
+
+                                {rolesDotacion.map((rol) => (
+                                    <div
+                                        key={rol.titulo}
+                                        className="border rounded-xl p-5 shadow-sm hover:shadow-md transition"
+                                    >
+                                        <h3 className="text-xl font-bold text-red-700 mb-2">
+                                            {rol.emoji} {rol.titulo}
+                                        </h3>
+
+                                        <p className="text-gray-600 mb-4">
+                                            {rol.descripcion}
+                                        </p>
+
+                                        <h4 className="font-semibold text-gray-800 mb-2">
+                                            Funciones
+                                        </h4>
+
+                                        <ul className="list-disc ml-5 space-y-1 text-gray-700">
+                                            {rol.funciones.map((funcion, index) => (
+                                                <li key={index}>
+                                                    {funcion}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+
+                            </div>
+
+                        </div>
+                    </details>
+
+
+                    {/* Reglas Generales de Ataque */}
+                    <details className="bg-white rounded-xl shadow-md p-6">
+                        <summary className="text-2xl font-bold text-red-700 cursor-pointer">
+                            🔥 Reglas Generales de Ataque (R.G.A.)
+                        </summary>
+
+                        <div className="mt-4 space-y-5 text-gray-700">
+
+                            <p>
+                                Las Reglas Generales de Ataque son un conjunto de
+                                principios que orientan la actuación del personal durante
+                                un incendio, buscando realizar un ataque ordenado,
+                                seguro y eficaz.
+                            </p>
+
+                            {[
+                                [
+                                    "1. Cortar suministros",
+                                    "Cortar los suministros de gas y luz, cuando sea posible y seguro hacerlo."
+                                ],
+                                [
+                                    "2. Atacar el fuego sobre su plano",
+                                    "Atacar el fuego sobre su plano, es decir, en el lugar donde se desarrolla."
+                                ],
+                                [
+                                    "3. Aproximarse al fuego lo más posible",
+                                    "Realizar el ataque desde una distancia adecuada, aproximándose al fuego lo máximo posible siempre que las condiciones de seguridad lo permitan."
+                                ],
+                                [
+                                    "4. Combatirlo hacia el lado al cual son impulsadas las llamas",
+                                    "Combatir el fuego hacia el lado hacia el cual son impulsadas las llamas, teniendo en cuenta la dirección del viento."
+                                ],
+                                [
+                                    "5. Proteger las escaleras del local incendiado",
+                                    "Proteger las escaleras del local incendiado para mantener una vía segura de circulación y escape."
+                                ],
+                                [
+                                    "6. Atacar rápidamente las puertas de madera",
+                                    "Atacar rápidamente las puertas de madera, principalmente marcos de puertas y ventanas, evitando que favorezcan la propagación del fuego."
+                                ],
+                                [
+                                    "7. No dirigir el chorro sobre objetos no afectados",
+                                    "No dirigir el chorro de agua sobre objetos y mercadería no afectados por el fuego, ni sobre el humo, vidrios y armaduras metálicas."
+                                ]
+                            ].map(([titulo, descripcion]) => (
+                                <div
+                                    key={titulo}
+                                    className="border-l-4 border-red-700 pl-4"
+                                >
+                                    <h3 className="font-bold text-lg">
+                                        {titulo}
+                                    </h3>
+
+                                    <p className="mt-1">
+                                        {descripcion}
+                                    </p>
+                                </div>
+                            ))}
+
+                            <div className="bg-red-50 border border-red-200 rounded-lg p-5">
+
+                                <h3 className="font-bold text-lg text-red-700 mb-3">
+                                    ⚠️ Consideraciones complementarias
+                                </h3>
+
+                                <ul className="list-disc ml-6 space-y-1">
+                                    <li>Mantener vías de escape seguras.</li>
+                                    <li>Trabajar coordinadamente con el resto del personal.</li>
+                                    <li>Utilizar los elementos de protección personal correspondientes.</li>
+                                    <li>Evitar exposiciones innecesarias al humo y altas temperaturas.</li>
+                                    <li>Controlar la propagación del fuego antes de avanzar.</li>
+                                    <li>Cumplir las indicaciones del jefe de ataque.</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </details>
+
+                    {/* Matafuego / Extintor */}
+                    <details className="bg-white rounded-xl shadow-md p-6">
+                        <summary className="text-2xl font-bold text-red-700 cursor-pointer">
+                            🧯 Matafuego / Extintor
+                        </summary>
+
+                        <div className="mt-4 space-y-6 text-gray-700">
+
+                            <div>
+                                <h3 className="font-bold text-xl text-red-700">
+                                    🧯 ¿Qué es un matafuego?
+                                </h3>
+
+                                <p className="mt-2">
+                                    Dispositivo mecánico necesario para combatir y controlar
+                                    incendios en su etapa inicial mediante la descarga de un
+                                    agente extintor.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="font-bold text-xl text-red-700">
+                                    💧 Agentes extintores
+                                </h3>
+
+                                <div className="grid md:grid-cols-3 gap-4 mt-3">
+
+                                    <div className="bg-blue-50 rounded-lg p-4">
+                                        <h4 className="font-bold">💧 Líquidos</h4>
+                                        <ul className="list-disc ml-5 mt-2">
+                                            <li>Agua</li>
+                                            <li>Espuma</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="bg-gray-100 rounded-lg p-4">
+                                        <h4 className="font-bold">💨 Gases</h4>
+                                        <ul className="list-disc ml-5 mt-2">
+                                            <li>Halón</li>
+                                            <li>Dióxido de carbono (CO₂)</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="bg-yellow-50 rounded-lg p-4">
+                                        <h4 className="font-bold">🟡 Sólidos</h4>
+                                        <ul className="list-disc ml-5 mt-2">
+                                            <li>Polvo químico</li>
+                                            <li>Polvos especiales</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <p className="mt-4">
+                                    El agente extintor utilizado debe ser adecuado para el
+                                    tipo de fuego que se está combatiendo.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="font-bold text-xl text-red-700">
+                                    🧩 Componentes de un extintor
+                                </h3>
+
+                                <ul className="list-disc ml-6 mt-3 space-y-1">
+                                    <li><strong>Manómetro:</strong> controla la presión.</li>
+                                    <li><strong>Manguera:</strong> conduce el agente extintor.</li>
+                                    <li><strong>Válvula:</strong> controla la salida.</li>
+                                    <li><strong>Nitrógeno:</strong> puede utilizarse como agente impulsor.</li>
+                                    <li><strong>Cilindro:</strong> contiene el agente extintor.</li>
+                                    <li><strong>Tubo sifón:</strong> conduce el agente desde el cilindro.</li>
+                                    <li><strong>Boquilla:</strong> lugar por donde sale el agente.</li>
+                                    <li><strong>Agente extintor:</strong> sustancia utilizada para controlar o extinguir el fuego.</li>
+                                </ul>
+                            </div>
+
+                            <div className="bg-gray-50 rounded-xl p-5">
+
+                                <h3 className="font-bold text-xl text-red-700">
+                                    🧯 Extintor de polvo — 5 kg
+                                </h3>
+
+                                <h4 className="font-bold mt-4">
+                                    Forma básica de utilización
+                                </h4>
+
+                                <ol className="list-decimal ml-6 mt-2 space-y-1">
+                                    <li>Descolgar el extintor.</li>
+                                    <li>Quitar la anilla o pasador de seguridad.</li>
+                                    <li>Presionar la palanca.</li>
+                                    <li>Dirigir la descarga hacia la base de las llamas.</li>
+                                </ol>
+
+                            </div>
+
+                            <div className="bg-red-50 border border-red-200 rounded-lg p-5">
+
+                                <h3 className="font-bold text-lg text-red-700">
+                                    ⚠️ Para realizar un ataque adecuado
+                                </h3>
+
+                                <ul className="list-disc ml-6 mt-3 space-y-1">
+                                    <li>Mantener una distancia segura.</li>
+                                    <li>Dirigir el agente hacia la base del fuego.</li>
+                                    <li>Realizar un movimiento de lado a lado.</li>
+                                    <li>Avanzar únicamente cuando las condiciones sean seguras.</li>
+                                    <li>Mantener una vía de escape disponible.</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </details>
+
 
                     {/* Lecciones */}
                     <details className="bg-white rounded-xl shadow-md p-6">
